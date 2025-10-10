@@ -1,0 +1,95 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "source.filemaker-script",
+  "patterns": [
+    {
+      "include": "#loop"
+    },
+    {
+      "include": "#commands"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#variables"
+    },
+    {
+      "include": "#strings"
+    }
+  ],
+  "repository": {
+    "commands": {
+      "patterns": [
+        {
+          "name": "keyword.command.execute.filemaker",
+          "match": "スクリプト実行"
+        },
+        {
+          "name": "keyword.command.set-variable.filemaker",
+          "match": "変数を設定"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.script",
+          "match": "(?i)\\b(?:if|else\\s+if|else|end\\s+if|while|end\\s+while|for|end\\s+for|return)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.script",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.script",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "loop": {
+      "patterns": [
+        {
+          "name": "keyword.control.loop.filemaker",
+          "match": "\\bLoop\\b"
+        },
+        {
+          "name": "keyword.control.loop.filemaker",
+          "match": "\\bEnd\\s+Loop\\b"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.filemaker",
+          "match": "^\\s*#.*$"
+        },
+        {
+          "name": "comment.line.double-slash.filemaker",
+          "match": "(?<!\\S)//.*$"
+        },
+        {
+          "name": "comment.block.filemaker",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.filemaker",
+          "match": "\\$[\\p{L}_][\\p{L}\\p{N}_]*"
+        }
+      ]
+    }
+  },
+  "name": "FileMaker Script"
+}

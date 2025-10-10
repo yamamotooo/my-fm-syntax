@@ -1,0 +1,74 @@
+{
+  "name": "my-fm-syntax",
+  "displayName": "my-fm-syntax",
+  "description": "FileMaker スクリプト用の構文ハイライトを提供します。",
+  "version": "0.0.1",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "filemaker-script",
+        "aliases": [
+          "FileMaker"
+        ],
+        "extensions": [
+          ".txt"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "filemaker-script",
+        "scopeName": "source.filemaker-script",
+        "path": "./my-fm-syntax/script.tmLanguage.json"
+      }
+    ],
+    "configuration": {
+      "title": "FileMaker Syntax Highlighting",
+      "properties": {
+        "my-fm-syntax.colors.keywordControlLoop": {
+          "type": "string",
+          "default": "#2ecc71",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$",
+          "description": "Color for FileMaker loop control keywords."
+        },
+        "my-fm-syntax.colors.keywordCommandExecute": {
+          "type": "string",
+          "default": "#ff0000",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$",
+          "description": "Color for FileMaker execute command keywords."
+        },
+        "my-fm-syntax.colors.keywordCommandSetVariable": {
+          "type": "string",
+          "default": "#00fff7",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$",
+          "description": "Color for FileMaker Set Variable command keywords."
+        },
+        "my-fm-syntax.colors.stringQuotedDouble": {
+          "type": "string",
+          "default": "#ff743c",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$",
+          "description": "Color for double-quoted strings."
+        },
+        "my-fm-syntax.colors.variableOther": {
+          "type": "string",
+          "default": "#c971eb",
+          "pattern": "^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$",
+          "description": "Color for FileMaker variables."
+        }
+      }
+    }
+  },
+  "main": "./extension.js",
+  "publisher": "George",
+  "activationEvents": [
+    "onLanguage:filemaker-script"
+  ]
+}

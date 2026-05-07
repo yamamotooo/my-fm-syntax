@@ -1,0 +1,44 @@
+# ===== 依存関係 =====
+node_modules/
+
+# ===== ビルド成果物 =====
+dist/
+out/
+
+# ===== パッケージファイル =====
+*.vsix
+
+# ===== テスト =====
+.vscode-test/
+
+# ===== ソースマップ =====
+**/*.js.map
+
+# ===== ログ =====
+*.log
+npm-debug.log*
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== エディタ設定（ローカル） =====
+.env
+.env.local
+.env.*.local
+
+# ===== 【機密】データフォルダ =====
+data/
+*.fmp12
+
+# ===== ローカル開発設定 =====
+.vscode/
+CLAUDE.md
+
+# ===== 認証情報・シークレット =====
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.*
+credentials.*

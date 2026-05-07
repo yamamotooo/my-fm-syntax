@@ -66,7 +66,7 @@
       }
     }
   },
-  "main": "./extension.js",
+  "main": "./dist/extension.js",
   "publisher": "George",
   "activationEvents": [
     "onLanguage:filemaker-script"

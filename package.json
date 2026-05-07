@@ -70,5 +70,11 @@
   "publisher": "George",
   "activationEvents": [
     "onLanguage:filemaker-script"
-  ]
+  ],
+  "devDependencies": {
+    "@vscode/vsce": "^2.15.0"
+  },
+  "overrides": {
+    "undici": "^6"
+  }
 }
